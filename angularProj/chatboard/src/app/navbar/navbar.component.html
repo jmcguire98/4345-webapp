@@ -1,0 +1,45 @@
+<body class="container">
+  <nav class="my-navbar navbar navbar-dark" id ="navBar">
+    <a class="navbar-brand"  routerLink="/home" routerLinkActive="active">
+      <img src="assets/4.png" height="90" alt="">
+    </a>
+    <ul class="nav justify-content-end ">
+      <li class="nav-item">
+        <a class="nav-link text-white " id="homeLink"routerLink="/home" href="/home">Home</a>
+      </li>
+
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white"
+          href="#"
+          id="navbarDropdownMenuLink"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false">
+          Select a forum
+        </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" routerLink="/home/chat/" (click)= "changeUserForum(1)">General</a>
+            <a class="dropdown-item" routerLink="/home/chat/" (click)= "changeUserForum(2)">Info Security</a>
+            <a class="dropdown-item" routerLink="/home/chat/"(click)= "changeUserForum(3)">Game Development</a>
+            <a class="dropdown-item" routerLink="/home/chat/" (click)= "changeUserForum(4)">Premed</a>
+            <a class="dropdown-item" routerLink="/home/chat/" (click)= "changeUserForum(5)">Data Intensive</a>
+          </div>
+      </li>
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white"
+          href="#"
+          id="navbarDropdownMenuLink"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false">
+          My Account
+        </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" routerLink="/home/profile/{{currentUser.username}}">View Profile</a>
+            <a class="dropdown-item" routerLink="/home/update">Update Profile</a>
+            <a class="dropdown-item" routerLink="/login">Logout</a>
+          </div>
+      </li>
+    </ul>
+  </nav>
+</body>

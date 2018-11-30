@@ -1,0 +1,41 @@
+<div *ngIf="userShow">
+  <div class="">
+  </div>
+  <div class="card" *ngIf="userShow">
+    <div class="card-header">
+      <div class="row">
+        <div class="col">
+          <h4>User Profile: {{userShow.username}}</h4>
+        </div>
+        <div class="col" *ngIf="userShow.username === currentUser.username">
+          <button type="submit" class="btn btn-primary float-right" routerLink="/home/update">Update Account</button>
+        </div>
+        <div class="col" *ngIf="userShow.username !== currentUser.username">
+          <button type="submit" class="btn btn-info float-right" routerLink="/home">Send Friend Request</button>
+        </div>
+      </div>
+    </div>
+    <div class="card-body" *ngIf="userShow.track">
+      <h5 class="card-title">Track: {{userShow.track}}</h5>
+      <p class="pull-left">Expected Year of Graduation:
+          <strong>{{userShow.gradYear}}</strong>
+      </p>
+
+      <h5>Bio:</h5>
+      <p>{{userShow.bio}}</p>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <p class="pull-left">Name:
+          <strong>{{userShow.firstname}} {{userShow.lastname}}</strong>
+        </p>
+        <p class="pull-left">Email:
+          <strong>{{userShow.email}}</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

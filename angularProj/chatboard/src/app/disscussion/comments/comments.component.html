@@ -1,0 +1,29 @@
+<form (onSubmit)="onEnter(f)" #f="ngForm" *ngIf="postId"> <!--(onsubmit)="onCreatePost(f)" "#f=ngForm"-->
+  <div class="input-group input-group-sm">
+    <div class="input-group-prepend">
+      <span class="btn btn-primary dropdown-toggle rounded-0" (click)="showComments()" data-toggle="collapse"
+      [attr.data-target]="'#'+postId">Show Comments</span>
+    </div>
+
+    <input
+      type="text"
+      name="newComments"
+      class="form-control"
+      aria-label="Small"
+      aria-describedby="inputGroup-sizing-sm"
+      ngModel
+      required
+      (keyup.enter)="onEnter(f)"
+      >
+  </div>
+
+  <div class="collapse" id="{{postId}}">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let comment of commentArr">{{ comment.body }}
+        <div class="input-group-prepend float-right">
+          <span class="input-group-text" id="inputGroup-sizing-sm">{{ comment.userName }}</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</form>

@@ -1,0 +1,15 @@
+/* .jumbotron {
+  background-color: black;
+
+} */
+
+input.ng-invalid.ng-touched {
+  border: solid red;
+}
+
+#updateActBtn{
+  background-color: lightblue;
+}
+#cancelBtn{
+  background-color: lightcoral;
+}

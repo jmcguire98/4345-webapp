@@ -1,0 +1,20 @@
+input.ng-invalid.ng-touched {
+  border: solid red;
+}
+
+.modal{
+  z-index: 99999;
+}
+
+#headerText{
+  color: whitesmoke;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+#returnBtn{
+  align-self: auto;
+  border-radius: 2px;
+  border: transparent;
+}
+#bodyT{
+  background-color: transparent;
+}

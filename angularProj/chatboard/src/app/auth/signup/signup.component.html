@@ -1,0 +1,33 @@
+<div class="container border rounded w-50 mt-5"> <!-- pageContainer -->
+  <div class="row pt-3 pb-3" style="background-color: #cc1f00"> <!-- signUp_header -->
+    <div class="col text-center">
+      <h4 id= "headerText">Create an account</h4>
+    </div>
+  </div> <!-- signUp_header -->
+
+  <!-- sign up body -->
+  <div class="container mt-3" id="test">
+    <div class="row">
+      <div class="col">
+        <form (ngSubmit)="addUser(f)" #f="ngForm"> <!--#f="ngForm // let me access the form object in js to see the submitted data"-->
+          <div class="form-group" ngModelGroup="personalData">
+            <input class="form-control mb-2" type="text" name="username" id="username" placeholder="User Name" required ngModel>
+            <input class="form-control mb-2" type="password" name="password" id="password" placeholder="Password" required ngModel>
+            <input class="form-control mb-2" type="password" name="ConfirmPassword" id="ConfirmPassword" placeholder="Confirm password" required ngModel>
+            <input class="form-control mb-2" type="text" name="firstname" id="firstname" placeholder="First Name" required ngModel>
+            <input class="form-control mb-2" type="text" name="lastname" id="lastname" placeholder="Last Name" required ngModel>
+            <input class="form-control mb-2" type="email" name="email" id="email" placeholder="Email" email required ngModel #emailAddress="ngModel">
+            <input class="form-control mb-2" type="text" name="gradYear" id="gradYear" placeholder="Expected Graduation Year" required ngModel>
+            <input class="form-control mb-2" name="trackSelect" id ="trackSelect" placeholder="Degree Track" required ngModel>
+          </div>
+          <div class="container">
+              <div class="row">
+                <div class="col">
+                  <h6>
+                  <button class="btn btn-primary mb-2" type="submit button" id="submit" data-dismiss="modal" [disabled]="!f.valid">Sign Up</button>
+                  <a class="btn btn-primary mb-2" id="returnBtn" routerLink="/login">Already have an account?</a>
+                  </h6>
+                </div>
+              </div>
+            </div>
+         </form>

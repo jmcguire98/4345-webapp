@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+      <form (onSubmit)="storePosts(f)" #f="ngForm">
+        <div class="form-group">
+
+          <button
+          class="btn btn-primary mt-2 mb-2"
+          type="submit"
+          id="submit"
+          (click)="storePosts()"
+          [disabled]="!f.valid"
+          >Add Post
+        </button>
+
+        <textarea
+        rows="1"
+        class="form-control mb-2"
+        name="postTitle"
+        placeholder="Write your title here."
+        required
+        ngModel>
+      </textarea>
+
+        <textarea
+          rows="4"
+          class="form-control mb-2"
+          name="newPost"
+          placeholder="Write your post here."
+          required
+          ngModel>
+        </textarea>
+
+        <div class="from-group border border-muted mb-3" *ngFor="let post of postsArr">
+
+          <ul class="list-group">
+            <div class="d-flex justify-content-between">
+              <div class="input-group">
+                <span class="input-group-text rounded font-weight-bold" id="postTitle">{{ post.title }}</span>
+              </div>
+
+              <div class="input-group-append"><span class="input-group-text rounded-0" id="inputGroup-sizing-sm">{{ post.postdate | date:'short' }}</span>
+                <button type="button" class="btn btn-danger" *ngIf="post.userName == currentUser.username" (click)="postDelete(post.id)">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            </div>
+            <li class="list-group-item" id="postField">{{ post.body }}</li>
+            <div class="d-flex justify-content-between">
+                <div class="input-group-prepend">
+                    <span class="input-group-text rounded-0" id="inputGroup-sizing-sm">Username: {{ post.userName }}</span>
+                </div>
+                <div class="input-group">
+                    <p class="input-group-text rounded-0">Track: {{ post.track }}</p>
+                </div>
+                <div class="input-group-append">
+                    <p class="input-group-text rounded-0">Grad Year: {{ post.gradYear }}</p>
+                </div>
+            </div>
+
+            <app-comments [postId]="post.id"></app-comments>
+          </ul>
+        </div>
+      </div>
+    </form>
+</div>
+</div>
+</div>

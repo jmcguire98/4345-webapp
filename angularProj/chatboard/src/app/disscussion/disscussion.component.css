@@ -1,0 +1,12 @@
+textarea{
+  resize: none;
+
+}
+
+#postField {
+  height: 20ex;
+}
+
+#postTitle {
+  font-size: 1.5rem;
+}

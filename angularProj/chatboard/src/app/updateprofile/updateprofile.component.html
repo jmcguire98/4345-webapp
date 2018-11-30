@@ -1,0 +1,66 @@
+<div class="profile-update">
+  <div class="container mt-5">
+    <form #updateform="ngForm" name="updateForm" class="mb-3">
+      <div class="row">
+        <div class="col-12">
+          <div class="form-row mt-3">
+            <span class="col">
+                <label>Update First Name</label>
+              <input #firstName class="form-control" id="first-name" name="firstName" [(ngModel)]="profile.firstname" placeholder={{currentUser.firstname}}>
+            </span>
+          </div>
+          <div class="form-row mt-3">
+            <span class="col">
+                <label>Update Last Name</label>
+              <input #lastName class="form-control" id="last-name" name="lastName" [(ngModel)]="profile.lastname" placeholder={{currentUser.lastname}}>
+            </span>
+
+          </div>
+          <div class="form-row mt-3">
+            <span class="col">
+                <label>Update Email</label>
+              <input class="form-control" type="text" name="Email" id="Email" placeholder={{currentUser.email}} [(ngModel)]="profile.email"
+                pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" #emailAddress="ngModel">
+              <span class="help-block" *ngIf="!emailAddress.valid && emailAddress.touched" ng-disabled="submit">Please enter a valid email adderss!</span>
+            </span>
+          </div>
+          <div class="form-row mt-3">
+              <span class="col">
+                  <label>Update Graduation Year</label>
+                <input #lastName class="form-control" id="gradYear" name="gradYear" [(ngModel)]="profile.gradYear" placeholder={{currentUser.gradYear}}>
+              </span>
+          </div>
+
+          <label for="updateBio" class="mt-3">Update Bio</label>
+          <textarea
+          rows="4"
+          class="form-control mb-2"
+          name="updateBio"
+          placeholder="Write something about yourself."
+          [(ngModel)]="str"
+          >
+          </textarea>
+
+          <div class="form-row mt-3" id="useless">
+            <span class="col">
+              <label>Change Declared Track</label>
+              <select #track class="form-control" id="track" name="track" [(ngModel)]="profile.track">
+                <option value="" [disabled]="true" [selected]="true"></option>
+                <option *ngFor="let track of ['Pre-Med','Information Security','Data-Intensive', 'General']">{{track}}</option>
+              </select>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <button #submit type="submit" class="btn mt-3" id="submit" name="submit" [disabled]="!updateform.valid" (click)="update();" id = "updateActBtn">Update Account</button>
+        <button type="submit" class="btn mt-3 ml-4" (click)="updateform.reset();" id="cancelBtn"> Cancel</button>
+      </div>
+    </form>
+    <div>
+      <div>
+        <app-password-change></app-password-change>
+      </div>
+    </div>
+  </div>
+</div>

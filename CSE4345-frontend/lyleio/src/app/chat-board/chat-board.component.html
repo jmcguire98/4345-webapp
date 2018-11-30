@@ -1,0 +1,73 @@
+<div class="container-fluid bg-primary">
+    <div class="row bg-primary" style="height: 100vh;">
+      <!-- <div class="col">
+
+      </div> -->
+
+      <div class="col">
+        <div class="bg-danger d-flex justify-content-center">
+          <nav class="nav">
+              <a class="nav-link active" href="#">CSE (General)</a>
+              <a class="nav-link" href="#">Cyber Security</a>
+              <a class="nav-link" href="#">Game Development</a>
+              <!-- <a class="nav-link disabled" href="#">Disabled</a> -->
+            </nav>
+          </div>
+      <div class="p-3">
+        <form>
+            <!-- (onSubmit)="storePosts(f)" -->
+            <!-- #f="ngForm" -->
+          <div class="form-group">
+
+            <button
+            class="btn btn-primary mt-2 mb-2"
+            type="submit"
+            id="submit"
+
+            [disabled]="!f.valid"
+            >Add Post
+          </button>
+          <!-- (click)="storePosts()" -->
+          <textarea
+            rows="4"
+            class="form-control mb-2"
+            name="newPost"
+            placeholder="Write your post here."
+            required
+            ngModel>
+          </textarea>
+
+          <div class="from-group border border-success mb-3">
+              <!-- *ngFor="let post of postsArr -->
+
+            <ul class="list-group">
+              <div class="d-flex justify-content-between">
+                <div class="input-group-prepend">
+                  <span class="input-group-text rounded-0" id="inputGroup-sizing-sm">UserName</span>
+                  <!-- {{ post.userName }} -->
+                </div>
+                <div class="input-group-append"><span class="input-group-text rounded-0" id="inputGroup-sizing-sm">PostDate</span>
+                  <!-- {{ post.postdate | date:'short' }} -->
+                  <button type="button">
+                      <!-- " *ngIf="post.userName == currentUser.username" (click)="postDelete(post.id) -->
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+              </div>
+
+              <li class="list-group-item" id="postField">Post Body</li>
+              <!-- {{ post.body }} -->
+              <app-comments>Comments</app-comments>
+              <!-- [postId]="post.id" -->
+            </ul>
+          </div>
+        </div>
+      </form>
+    </div>
+
+
+
+  </div>
+  </div>
+  </div>

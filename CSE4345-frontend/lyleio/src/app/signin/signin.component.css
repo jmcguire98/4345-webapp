@@ -1,0 +1,16 @@
+#singupFrame{
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+}
+
+#smuLogo{
+  width: 200px;
+  border-radius: 5px;
+}
+
+#signupBackground{
+  height: 100vh;
+  background-image: url('../../assets/signup/dallashall.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}

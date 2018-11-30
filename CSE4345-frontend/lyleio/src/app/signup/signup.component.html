@@ -1,0 +1,49 @@
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Sign up</h5>
+
+
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <form>
+              <div class="form-group">
+            <input class="form-control mb-2 mt-3" type="text" name="firstName" placeholder="First Name" required ngModel>
+            <input class="form-control mb-2" type="text" name="lastName" placeholder="Last Name">
+            <input class="form-control mb-2" type="text" name="userName" placeholder="User Name">
+            <input class="form-control mb-2" type="email" name="email" placeholder="Email" email required ngModel>
+
+            <span class="help-block">Please enter a valid email adderss!</span>
+            <!-- *ngIf="!emailAddress.valid && emailAddress.touched" -->
+
+            <select class="form-control mb-2" >
+                <option class="selected">Choose Track</option>
+              <option>Cyber Secuirty</option>
+              <option>Game Development</option>
+              <option>Software Engineering</option>
+              <option>Research</option>
+              <option>General</option>
+            </select>
+            <input class="form-control mb-2" type="password" name="pass" placeholder="Password">
+            <input class="form-control mb-2" type="password" name="Confirm_pass" placeholder="Confirm Password">
+
+
+  </div>
+  </form>
+
+
+
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Sign up</button>
+          </div>
+        </div>
+      </div>
+      </div>
